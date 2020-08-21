@@ -9,7 +9,7 @@ To build the container use the following command in the directory containing the
 <H2>Running</H2>
 To run the container use the following command:
 <code>docker run -it --name devel --rm -p 5901:5901 name:tag</code>
-It's a good idea to overlay a docker volume over the devel users home directory (/home/devel) so save any modifications in that directory. All other changes will be reverted when the container exist.
+It's a good idea to overlay a docker volume over the devel users home directory (/home/devel) so save any modifications in that directory. All other changes will be reverted when the container exits.
 
 <H2>Eclipse</H2>
 Eclipse CDT is installed under /opt/eclipse
