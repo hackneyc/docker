@@ -26,5 +26,7 @@ RUN tar xvfz /opt/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz -C /opt && rm /opt/
 USER devel
 WORKDIR /home/devel
 
+RUN echo "export PATH=/opt/eclipse:$PATH" >> .bashrc
+
 # Advertize the port number used for VNC
 EXPOSE 5901
