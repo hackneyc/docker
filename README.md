@@ -1,20 +1,26 @@
 # docker
-<H1>Docker Development Environments</H1>
-This repo contains docker container build files (Dockerfile) to create C/C++ developers environment under CentOS. The container includes a desktop environment which may be accessed via VNC.
+# Docker Development Environments
+This repo contains docker container build files to create C/C++ developers environment under CentOS. The container includes a desktop environment which may be accessed via a VNC client.
 
-<H2>Building</H2>
+## Building
 To build the container use the following command in the directory containing the 'Dockerfile':
-<code>docker build . -t name:tag</code>
 
-<H2>Running</H2>
+`docker build . -t name:tag`
+
+## Running
 To run the container use the following command:
-<code>docker run -it --name devel --rm -p 5901:5901 name:tag</code>
-It's a good idea to overlay a docker volume over the devel users home directory (/home/devel) so save any modifications in that directory. All other changes will be reverted when the container exits.
+
+`docker run -it --name devel --rm -p 5901:5901 name:tag`
+
+It's a good idea to overlay a docker volume over the devel users home directory (/home/devel) to save any modifications in that directory. All other changes will be reverted when the container exits.
 
 Once the container is running use the following command to start a VNC server instance:
-<code>vncserver -geometry 1920x1080</code>
-Once the server is running you can connect to it from the host using hostname and VNC port specified below.
-<code>localhost:1</code>
 
-<H2>Eclipse</H2>
+`vncserver -geometry 1920x1080`
+
+Once the server is running you can connect to it from the host using hostname and VNC port specified below.
+
+`localhost:1`
+
+## Eclipse
 Eclipse CDT is installed under /opt/eclipse
