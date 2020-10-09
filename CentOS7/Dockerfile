@@ -27,6 +27,8 @@ USER root
 WORKDIR /root
 RUN echo "mate-session" > ~/.Xclients && chmod a+x ~/.Xclients
 
+systemd-machine-id-setup
+
 # Set the default Desktop environment for devel
 USER devel
 WORKDIR /home/devel
