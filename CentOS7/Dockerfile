@@ -7,8 +7,13 @@ RUN echo password | passwd --stdin root
 RUN adduser -u 1000 -U -m devel
 RUN echo password | passwd --stdin devel
 
+# Ensure man pages are installed
+RUN sed -i s/^tsflags=/#tsflags=/ /etc/yum.conf
+
+RUN yum -y install man-pages
+
 # Install the development tools
-RUN yum -y install dialog man man-pages man-db epel-release java wget
+RUN yum -y install dialog epel-release java wget
 RUN yum -y groupinstall "Development tools"
 
 # Desktop Installation
